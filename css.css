@@ -1,0 +1,45 @@
+#m{
+	font-size: 24px;
+	color: blue;
+}
+#w{
+	font-size: 24px;
+	color: red;
+}
+#mage, #war{
+	transform:scale(1.3);
+  opacity:0.9;
+  cursor:pointer;
+}
+.rasinf{
+	font-size: 30px;
+	font-weight: bold;
+}
+.lvlinf{
+	margin-left: 60%;
+	font-size: 25px;
+	font-weight: bold;
+}
+#lvl{
+	font-weight: bold;
+	font-size: 25px;
+}
+span{
+	font-size: 24px;
+	transition: 0.5s;
+}
+.monstr{
+	font-weight: bold;
+	margin-left: 40%;
+
+}
+.do{
+	width: 120px;
+}
+.mh{
+	color: red;
+	margin-top: 30%;
+}
+.h{
+	color: green;
+}
