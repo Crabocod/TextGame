@@ -124,10 +124,86 @@ function attack(){
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
 				exp = 0;
-				console.log(lvl.innerHTML);
+				heal.innerHTML = 25;
 			}
 			else{
 				alert("Получено '1 exp', до нового уровня: " + exp + "/5")
+			}
+			alert("И вот пред вами новый монстр!");
+			mheal.innerHTML = hwmheal;
+	}
+}
+	else if (+lvl.innerHTML == 4) {
+		var damage = rand(4,9);
+		var damage1 = rand(4,7);
+
+		
+
+		move.innerHTML = +move.innerHTML - 1;
+
+		alert("Вы нанесли монстру " + damage + " урона!");
+		mheal.innerHTML = +mheal.innerHTML - damage;
+
+		if (+mheal.innerHTML > 0 && !shield) {
+			alert("Монстр бьет в ответ и наносит вам " + damage1 + " урона");
+			heal.innerHTML = +heal.innerHTML - damage1;
+		}
+		if (shield) {
+			alert("Щит заблокировал весь урон!");
+			shield = false;
+		}
+
+		if (+mheal.innerHTML <= 0) {
+			move.innerHTML = 7;
+			var hwmheal = rand(15,22);
+			alert("Монстр убит, поздравляю!");
+			exp++
+			if (exp == 6) {
+				alert("Ваш уровень повышен!");
+				lvl.innerHTML = +lvl.innerHTML + 1;
+				exp = 0;
+				heal.innerHTML = 30;
+			}
+			else{
+				alert("Получено '1 exp', до нового уровня: " + exp + "/6")
+			}
+			alert("И вот пред вами новый монстр!");
+			mheal.innerHTML = hwmheal;
+	}
+}
+	else if (+lvl.innerHTML == 5) {
+		var damage = rand(7,12);
+		var damage1 = rand(6,10);
+
+		
+
+		move.innerHTML = +move.innerHTML - 1;
+
+		alert("Вы нанесли монстру " + damage + " урона!");
+		mheal.innerHTML = +mheal.innerHTML - damage;
+
+		if (+mheal.innerHTML > 0 && !shield) {
+			alert("Монстр бьет в ответ и наносит вам " + damage1 + " урона");
+			heal.innerHTML = +heal.innerHTML - damage1;
+		}
+		if (shield) {
+			alert("Щит заблокировал весь урон!");
+			shield = false;
+		}
+
+		if (+mheal.innerHTML <= 0) {
+			move.innerHTML = 7;
+			var hwmheal = rand(16,26);
+			alert("Монстр убит, поздравляю!");
+			exp++
+			if (exp == 7) {
+				alert("Ваш уровень повышен!");
+				lvl.innerHTML = +lvl.innerHTML + 1;
+				exp = 0;
+				heal.innerHTML = 35;
+			}
+			else{
+				alert("Получено '1 exp', до нового уровня: " + exp + "/7")
 			}
 			alert("И вот пред вами новый монстр!");
 			mheal.innerHTML = hwmheal;
@@ -145,7 +221,7 @@ function attack(){
 	}
 	if (+move.innerHTML == 0) {
 		alert("Ходы закнчились!");
-		var death = confirm("Начать заново за мага?");
+		var death = confirm("Начать заново?");
 		if (death) {
 			location.reload()
 		}
@@ -180,7 +256,7 @@ function healing(){
 	}
 	}
 	else if (+lvl.innerHTML == 3) {
-	var hwheal = rand(4,6);
+	var hwheal = rand(3,5);
 
 	move.innerHTML = +move.innerHTML - 1;
 
@@ -190,9 +266,31 @@ function healing(){
 		heal.innerHTML = 20;
 	}
 	}
+	else if (+lvl.innerHTML == 4) {
+	var hwheal = rand(5,6);
+
+	move.innerHTML = +move.innerHTML - 1;
+
+	alert("Вы восстановили здоровье на " + hwheal + " единиц!");
+	heal.innerHTML = +heal.innerHTML + hwheal;
+	if (+heal.innerHTML > 25) {
+		heal.innerHTML = 25;
+	}
+	}
+	else if (+lvl.innerHTML == 5) {
+	var hwheal = rand(6,8);
+
+	move.innerHTML = +move.innerHTML - 1;
+
+	alert("Вы восстановили здоровье на " + hwheal + " единиц!");
+	heal.innerHTML = +heal.innerHTML + hwheal;
+	if (+heal.innerHTML > 30) {
+		heal.innerHTML = 30;
+	}
+	}
 	if (+move.innerHTML == 0) {
 		alert("Ходы закнчились!");
-		var death = confirm("Начать заново за мага?");
+		var death = confirm("Начать заново?");
 		if (death) {
 			location.reload()
 		}
@@ -208,7 +306,7 @@ function shieldActive(){
 	shield = true;
 	if (+move.innerHTML == 0) {
 		alert("Ходы закнчились!");
-		var death = confirm("Начать заново за воина?");
+		var death = confirm("Начать заново?");
 		if (death) {
 			location.reload()
 		}
