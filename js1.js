@@ -8,6 +8,7 @@ var pic1 = document.getElementById("pic1");
 //alert("На каждого монстра у вас всего 7 ходов!");
 var pic = document.getElementById("pic");
 var pic2 = document.getElementById("pic2");
+var expOut = document.getElementById("expOut");
 
 if (pic2) {
 pic2.style.background = "url(img/war.jpg) no-repeat top center / cover";
@@ -41,7 +42,8 @@ function attack(){
 			var hwmheal = rand(4,6);
 			alert("Монстр убит, поздравляю!");
 			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
-			exp++
+			exp++;
+			expOut.innerHTML = exp+"/3"
 			if (exp == 3) {
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
@@ -80,7 +82,9 @@ function attack(){
 			move.innerHTML = 7;
 			var hwmheal = rand(7,8);
 			alert("Монстр убит, поздравляю!");
-			exp++
+			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+			exp++;
+			expOut.innerHTML = exp+"/4"
 			if (exp == 4) {
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
@@ -119,7 +123,9 @@ function attack(){
 			move.innerHTML = 7;
 			var hwmheal = rand(8,12);
 			alert("Монстр убит, поздравляю!");
-			exp++
+			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+			exp++;
+			expOut.innerHTML = exp+"/5"
 			if (exp == 5) {
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
@@ -157,7 +163,9 @@ function attack(){
 			move.innerHTML = 7;
 			var hwmheal = rand(15,22);
 			alert("Монстр убит, поздравляю!");
-			exp++
+			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+			exp++;
+			expOut.innerHTML = exp+"/6"
 			if (exp == 6) {
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
@@ -195,7 +203,9 @@ function attack(){
 			move.innerHTML = 7;
 			var hwmheal = rand(16,26);
 			alert("Монстр убит, поздравляю!");
-			exp++
+			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+			exp++;
+			expOut.innerHTML = exp+"/7"
 			if (exp == 7) {
 				alert("Ваш уровень повышен!");
 				lvl.innerHTML = +lvl.innerHTML + 1;
