@@ -5,7 +5,7 @@ var exp = 0;
 var move = document.getElementById("move");
 var shield = false;
 var pic1 = document.getElementById("pic1");
-//alert("На каждого монстра у вас всего 7 ходов!");
+alert("На каждого монстра у вас всего 7 ходов!");
 var pic = document.getElementById("pic");
 var pic2 = document.getElementById("pic2");
 
