@@ -4,7 +4,14 @@ var mheal = document.getElementById("mheal");
 var exp = 0;
 var move = document.getElementById("move");
 var shield = false;
-alert("На каждого монстра у вас всего 7 ходов!");
+var pic1 = document.getElementById("pic1");
+//alert("На каждого монстра у вас всего 7 ходов!");
+var pic = document.getElementById("pic");
+var pic2 = document.getElementById("pic2");
+
+pic2.style.background = "url(img/war.jpg) no-repeat top center / cover";
+pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+pic1.style.background = "url(img/mage.jpg) no-repeat top center / cover";
 
 function attack(){
 	if (+lvl.innerHTML == 1) {
@@ -29,6 +36,7 @@ function attack(){
 			move.innerHTML = 7;
 			var hwmheal = rand(4,6);
 			alert("Монстр убит, поздравляю!");
+			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
 			exp++
 			if (exp == 3) {
 				alert("Ваш уровень повышен!");

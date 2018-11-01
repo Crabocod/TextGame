@@ -43,3 +43,15 @@ span{
 .h{
 	color: green;
 }
+#pic1, #pic2{
+	width: 260px;
+	height: 270px;
+	position: absolute;
+	left: 420px;
+}
+#pic{
+	width: 260px;
+	height: 270px;
+	position: absolute;
+	left: 720px;
+}
