@@ -311,7 +311,7 @@ function attack(){
 	}
 	if (+move.innerHTML == 0) {
 		alert("Ходы закнчились!");
-		var death = confirm("Начать заново за мага?");
+		var death = confirm("Начать заново за ту же рассу?");
 		if (death) {
 			location.reload()
 		}
