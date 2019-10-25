@@ -3,9 +3,11 @@ function apply() {
 	var war = document.getElementById('war');
 
 	if (mage.checked) {
-		document.location.href = "mage.html";
+		window.open('mage.html?&'+"mage");
+		window.close();
 	}
 	if (war.checked) {
-		document.location.href = "war.html";
+		window.open('war.html?&'+"war");
+		window.close();
 	}
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NewLvl</title>
+	<script type="text/javascript">
+
+	var race = decodeURIComponent(location.search.substr(1)).split('&');
+	race.splice(0, 1);
+	var r = race[0];
+	var lvl = race[1];
+
+	function choice(a) {
+		if (a == 1) {
+			if (r == "mage") {
+				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+			if (r == "war") {
+				window.open('war.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+		}
+		if (a == 2) {
+			if (r == "mage") {
+				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+			if (r == "war") {
+				window.open('war.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+		}
+		if (a == 3) {
+			if (r == "mage") {
+				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+			if (r == "war") {
+				window.open('war.html?&'+a+'&'+lvl+'&'+r);
+				window.close();
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	if (r == "mage") {
+		document.write('<div class="msg">New level update!<br/><br/>Выбирите навый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/ice.jpg"> <div class="txt">Заморозка "замораживает цель на 1-2 хода "</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/shield.jpg"><div class="txt">Броня "+5HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/mstick.jpg"><div class="txt">Атака "+5 силы атаки"</div></div></div>')
+	}
+	if (r == "war") {
+		document.write('<div class="msg">New level update!<br/><br/>Выбирите навый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/deusvult.jpg"> <div class="txt">Удар щитом "Оглушает цель на 2 хода"</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/wshield.jpg"><div class="txt">Броня "7HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/sword.jpg"><div class="txt">Атака "+4 силы атаки"</div></div></div>')
+	}
+</script>
+<style type="text/css">
+	.msg{
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+	}
+	#blocks{
+		margin-top: 50px;
+		text-align: center;
+		white-space: nowrap;
+	}
+	.option{
+		display: inline-block;
+		width: 300px;
+	}
+	img:hover{
+		border: 3px solid white;
+		transition: 0.5s;
+	}
+	img{
+		border: 1px solid blue;
+		width: 300px;
+	}
+
+</style>
+</body>
+</html>
