@@ -69,7 +69,7 @@ if (pic2) {
 else{
 	pic1.style.background = "url(img/mage.jpg) no-repeat top center / cover";
 }
-pic.style.background = "url(img/" + rand(1,12) + ".jpg) no-repeat top center / cover";
+pic.style.background = "url(img/" + rand(1,14) + ".jpg) no-repeat top center / cover";
 
 function healing(){
 	if (+lvl.innerHTML == 1) {
@@ -130,6 +130,9 @@ function rand(min,max){
 }
 
 function froze() {
+if (pic.style.background == 'url("img/12.jpg") center top / cover no-repeat' || pic.style.background == 'url("img/8.jpg") center top / cover no-repeat') {
+	pic.style.background = "url(img/15.jpg) center top / cover no-repeat";
+}
 	hmstan = rand(1,2);
 	if (hmstan == 1) {
 	alert("Вы заморозили монстра на 1 ход");
@@ -145,6 +148,9 @@ function froze() {
 	}
 }
 function shieldAttack() {
+if (pic.style.background == 'url("img/12.jpg") center top / cover no-repeat' || pic.style.background == 'url("img/8.jpg") center top / cover no-repeat') {
+	pic.style.background = "url(img/15.jpg) center top / cover no-repeat";
+}
 	hmstan = 2;
 	alert("Вы оглушили монстра на 2 хода");
 	move.innerHTML = +move.innerHTML - 1;
@@ -211,7 +217,13 @@ function attack(){
 			}
 
 			alert("Монстр убит, поздравляю!");
-			pic.style.background = "url(img/" + rand(1,9) + ".jpg) no-repeat top center / cover";
+			pic.style.background = "url(img/" + rand(1,14) + ".jpg) no-repeat top center / cover";
+			if (pic.style.background == 'url("img/12.jpg") center top / cover no-repeat' || pic.style.background == 'url("img/8.jpg") center top / cover no-repeat') {
+				document.getElementsByClassName("monstr")[0].innerHTML = "Вот незадача перед вами кудрявый ЧОРТ!";
+			}
+			else{
+				document.getElementsByClassName("monstr")[0].innerHTML = "Перед вами монстр";
+			}
 			exp++;
 			if (+lvl.innerHTML == 1 && exp == 3 || +lvl.innerHTML == 2 && exp == 4 || +lvl.innerHTML == 3 && exp == 5) {
 				alert("Ваш уровень повышен!");
