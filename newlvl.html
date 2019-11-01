@@ -11,46 +11,86 @@
 	var lvl = race[1];
 
 	function choice(a) {
+		if (lvl == 2) {
+			if (a == 1) {
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+			}
+			if (a == 2) {
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+			}
+			if (a == 3) {
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+			}
+	}
+	else if(lvl == 3){
 		if (a == 1) {
-			if (r == "mage") {
-				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
 			}
-			if (r == "war") {
-				window.open('war.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
+			if (a == 2) {
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
 			}
-		}
-		if (a == 2) {
-			if (r == "mage") {
-				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
+			if (a == 3) {
+				if (r == "mage") {
+					window.open('mage.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
+				if (r == "war") {
+					window.open('war.html?&'+a+'&'+lvl+'&'+r);
+					window.close();
+				}
 			}
-			if (r == "war") {
-				window.open('war.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
-			}
-		}
-		if (a == 3) {
-			if (r == "mage") {
-				window.open('mage.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
-			}
-			if (r == "war") {
-				window.open('war.html?&'+a+'&'+lvl+'&'+r);
-				window.close();
-			}
-		}
+	}
 	}
 	</script>
 </head>
 <body>
 <script type="text/javascript">
-	if (r == "mage") {
-		document.write('<div class="msg">New level update!<br/><br/>Выберите новый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/ice.jpg"> <div class="txt">Заморозка "замораживает цель на 1-2 хода "</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/shield.jpg"><div class="txt">Броня "+5HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/mstick.jpg"><div class="txt">Атака "+5 силы атаки"</div></div></div>')
+	if (r == "mage" && lvl == 2) {
+		document.write('<div class="msg">New level update!<br/><br/>Выберите новый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/ice.jpg"> <div class="txt">Заморозка "замораживает цель на 1-2 хода "</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/shield.jpg"><div class="txt">Броня "+6HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/mstick.jpg"><div class="txt">Атака "+6 силы атаки"</div></div></div>')
 	}
-	if (r == "war") {
+	else if (r == "mage" && lvl == 3) {
+			document.write('<div class="msg">New level update!<br/><br/>Выберите новый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/speed.jpg"> <div class="txt">Зелье скорости "+ 1 ход на каждого монстра"</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/shield.jpg"><div class="txt">Броня "+5HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/mstick.jpg"><div class="txt">Атака "+5 силы атаки"</div></div></div>')
+	}
+	else if (r == "war" && lvl == 2) {
 		document.write('<div class="msg">New level update!<br/><br/>Выберите новый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/deusvult.jpg"> <div class="txt">Удар щитом "Оглушает цель на 2 хода"</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/wshield.jpg"><div class="txt">Броня "7HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/sword.jpg"><div class="txt">Атака "+4 силы атаки"</div></div></div>')
+	}
+	else if (r == "war" && lvl == 3) {
+		document.write('<div class="msg">New level update!<br/><br/>Выберите новый навык</div><div id="blocks"><div class="option" onclick="choice(1)"><img class="displayed" src="img/horse.jpg"> <div class="txt">Новый конь "+ 2 хода на каждого монстра"</div></div><div class="option" onclick="choice(2)"><img class="displayed" src="img/wshield.jpg"><div class="txt">Броня "8HP"</div></div><div class="option" onclick="choice(3)"><img class="displayed" src="img/sword.jpg"><div class="txt">Атака "+6 силы атаки"</div></div></div>')
 	}
 </script>
 <style type="text/css">

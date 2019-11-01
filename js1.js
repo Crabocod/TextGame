@@ -13,7 +13,6 @@ var exp = 0;
 var move = document.getElementById("move");
 var shield = false;
 var pic1 = document.getElementById("pic1");
-alert("На каждого монстра у вас всего 7 ходов!");
 var pic = document.getElementById("pic");
 var pic2 = document.getElementById("pic2");
 var opp = document.getElementById("opp");
@@ -44,24 +43,48 @@ else if(+lvl.innerHTML == 3){
 	mheal.innerHTML = rand(10,14);
 }
 
-if (race == "mage" && a == 1) {
-	opp.insertAdjacentHTML('beforeEnd','<input type="button" value="Заморозить" class="do" onclick="froze()"><br>');
+if (lvl1 == 2) {
+	if (race == "mage" && a == 1) {
+		opp.insertAdjacentHTML('beforeEnd','<input type="button" value="Заморозить" class="do" onclick="froze()"><br>');
+	}
+	else if(race == "mage" && a == 2){
+		heal.innerHTML = +heal.innerHTML + 5;
+	}
+	else if(race == "mage" && a == 3){
+		baff = 5;
+	}
+	else if(race == "war" && a == 1){
+		opp.insertAdjacentHTML('beforeEnd','<input type="button" value="Удар щитом" class="do" onclick="shieldAttack()"><br>');
+	}
+	else if(race == "war" && a == 2){
+		heal.innerHTML = +heal.innerHTML + 7;
+	}
+	else if(race == "war" && a == 3){
+		baff = 4;
+	}
 }
-else if(race == "mage" && a == 2){
-	heal.innerHTML = +heal.innerHTML + 5;
+else if (lvl1 == 3) {
+	if (race == "mage" && a == 1) {
+		move.innerHTML = +move.innerHTML+1;
+	}
+	else if(race == "mage" && a == 2){
+		heal.innerHTML = +heal.innerHTML + 6;
+	}
+	else if(race == "mage" && a == 3){
+		baff = baff + 6;
+	}
+	else if(race == "war" && a == 1){
+		move.innerHTML = +move.innerHTM + 2;
+	}
+	else if(race == "war" && a == 2){
+		heal.innerHTML = +heal.innerHTML + 8;
+	}
+	else if(race == "war" && a == 3){
+		baff = baff + 6;
+	}
 }
-else if(race == "mage" && a == 3){
-	baff = 5;
-}
-else if(race == "war" && a == 1){
-	opp.insertAdjacentHTML('beforeEnd','<input type="button" value="Удар щитом" class="do" onclick="shieldAttack()"><br>');
-}
-else if(race == "war" && a == 2){
-	heal.innerHTML = +heal.innerHTML + 7;
-}
-else if(race == "war" && a == 3){
-	baff = 4;
-}
+var move = document.getElementById("move");
+alert("На каждого монстра у вас всего " + +move.innerHTML+ " ходов!");
 
 if (pic2) {
 	pic2.style.background = "url(img/war.jpg) no-repeat top center / cover";
@@ -180,8 +203,14 @@ function attack(){
 		}
 	}
 	else if(+lvl.innerHTML == 3){
-		var damage = rand(2,6);
-		var damage1 = rand(2,5);
+		if (baff) {
+			var damage = rand(4,6+baff);
+			var damage1 = rand(4,7);
+		}
+		else{
+		var damage = rand(3,6);
+		var damage1 = rand(3,6);
+		}
 	}
 
 		move.innerHTML = +move.innerHTML - 1;
@@ -196,6 +225,9 @@ function attack(){
 		if (hmstan) {
 			alert("Монстр оглушен и не наносит вам урона");
 			hmstan--;
+		}
+		if (!hmstan && pic.style.background == 'url("img/15.jpg") center top / cover no-repeat') {
+			pic.style.background = "url(img/12.jpg) center top / cover no-repeat";
 		}
 		else if (shield) {
 			alert("Щит заблокировал весь урон!");
@@ -213,7 +245,7 @@ function attack(){
 				var hwmheal = rand(9,12);
 			}
 			else if(+lvl.innerHTML == 3){
-				var hwmheal = rand(10,14);
+				var hwmheal = rand(11,14);
 			}
 
 			alert("Монстр убит, поздравляю!");
